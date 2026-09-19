@@ -1,0 +1,137 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "../vendor/shadcn-tailwind-4.13.0.css";
+:root{--background:#f2f5f8;--foreground:#172f47;--card:#fff;--card-foreground:#172f47;--popover:#fff;--popover-foreground:#172f47;--primary:#225c9d;--primary-foreground:#fff;--secondary:#e6edf4;--secondary-foreground:#28465e;--muted:#e7edf3;--muted-foreground:#5e7183;--accent:#e8f0f9;--accent-foreground:#172f47;--destructive:#b6383d;--border:#d9e2ea;--input:#cbd7e2;--ring:#3272b5;--radius:.6rem;--board:#091b2b;--ink:#e9f4ff;--sky:#94d8f6;--gold:#f4cd87}
+@theme inline{--color-background:var(--background);--color-foreground:var(--foreground);--color-card:var(--card);--color-card-foreground:var(--card-foreground);--color-popover:var(--popover);--color-popover-foreground:var(--popover-foreground);--color-primary:var(--primary);--color-primary-foreground:var(--primary-foreground);--color-secondary:var(--secondary);--color-secondary-foreground:var(--secondary-foreground);--color-muted:var(--muted);--color-muted-foreground:var(--muted-foreground);--color-accent:var(--accent);--color-accent-foreground:var(--accent-foreground);--color-destructive:var(--destructive);--color-border:var(--border);--color-input:var(--input);--color-ring:var(--ring);--radius-lg:var(--radius);--radius-md:.45rem;--radius-sm:.3rem;--font-sans:'Malgun Gothic','Apple SD Gothic Neo',sans-serif}
+*{box-sizing:border-box}body{margin:0;background:var(--background);color:var(--foreground);font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;font-size:16px;line-height:1.65}button,a,input,textarea,select{-webkit-tap-highlight-color:transparent}button{cursor:pointer;font:inherit}button:disabled{cursor:not-allowed}button:focus-visible,a:focus-visible{outline:3px solid #579bd6;outline-offset:4px}button[data-slot=button]{min-height:44px;font-size:14px}a{color:inherit}svg{flex-shrink:0}input,textarea{font:inherit}h1,h2,h3,p,figure{margin:0}.app-header{height:76px;background:white;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:32px;padding:0 40px}.brand{display:flex;align-items:center;gap:10px;color:#204e79;text-decoration:none;font-size:21px;font-weight:800;letter-spacing:-1px}.brand sup{font-size:11px;letter-spacing:0;margin-left:6px;background:#e9f2fb;border-radius:4px;padding:2px 4px}.header-context{font-size:14px;color:var(--muted-foreground);border-left:1px solid var(--border);padding-left:28px}.mode-tag{margin-left:auto;border:1px solid var(--border);border-radius:20px;padding:5px 14px;font-size:13px;background:#f8fafc;color:#48647d}.workspace{max-width:1760px;margin:auto;padding:27px 40px 24px}.workspace-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;gap:16px}.breadcrumb{font-size:13px;color:#5e7183;margin-bottom:2px}h1{font-size:27px;font-weight:750;letter-spacing:-1px}.teaching-layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:24px;align-items:start}.board-column{min-width:0}.board-toolbar{height:46px;display:flex;align-items:center;gap:16px;padding:0 18px;background:#fff;border:1px solid var(--border);border-bottom:0;border-radius:12px 12px 0 0;font-size:13px;color:#627587}.board-toolbar>span:first-child{font-weight:600;color:#254968}.board-toolbar>span:nth-child(2){margin-left:auto}.board-toolbar button{padding:9px;display:flex}.teaching-board{background:var(--board);color:var(--ink);padding:28px 34px 18px;min-height:550px;position:relative;overflow:hidden;border-radius:0 0 10px 10px}.board-topline{display:flex;justify-content:space-between;color:#99b3ca;font-size:13px}.teaching-board h2{white-space:pre-line;font-size:clamp(25px,2.25vw,38px);line-height:1.45;letter-spacing:-1px;margin:17px 0 10px;font-weight:650}.board-body{display:grid;grid-template-columns:46% 54%;align-items:center;min-height:325px}.earth-stage{position:relative;width:100%;max-width:400px;aspect-ratio:420/400;margin:auto}.earth-stage>img{position:absolute;width:78%;height:78%;left:11%;top:13.5%;border-radius:50%;object-fit:cover;mix-blend-mode:screen}.earth-annotations{position:absolute;width:100%;height:100%;inset:0}.earth-figure figcaption{text-align:center;font-size:15px;color:#c2d6e9;margin-top:-13px}.earth-figure figcaption span{display:block;font-size:11px;color:#9bb1c5;margin-top:6px}.derivation{padding:15px 5px 15px 28px;min-width:0}.step-label{color:var(--gold);font-size:14px;margin-bottom:16px;font-weight:700}.concept-note{font-size:clamp(16px,1.2vw,19px);line-height:1.95;word-break:keep-all;color:#e1ecf5}.formula-preview{font-family:Georgia,serif;font-size:clamp(25px,3vw,42px);padding:25px 0;color:var(--gold)}.symbol-legend{display:flex;flex-wrap:wrap;gap:10px 18px;border-top:1px solid #294154;margin-top:28px;padding-top:17px;font-size:12px;color:#b2c8dc}.symbol-legend b{font-family:Georgia,serif;font-size:17px;font-style:italic;padding-right:5px;color:var(--sky)}.board-assumptions{border-top:1px solid #294154;padding-top:13px;margin-top:16px;color:#a7bfd2;font-size:12px}.step-navigation{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:20px 0}.step-navigation>span{text-align:center;font-size:14px;font-weight:600}.step-navigation small{display:block;font-size:12px;color:#627587;font-weight:400}.lesson-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}.lesson-strip button{min-width:0;text-align:left;padding:12px 10px;background:#fff;border:1px solid var(--border);border-radius:7px}.lesson-strip button.current{border:2px solid #356eac;background:#eff6ff;padding:11px 9px}.lesson-strip button>span{height:21px;display:flex;align-items:center;font-size:12px;color:#557797;margin-bottom:6px}.lesson-strip b{display:block;font-size:13px;white-space:nowrap}.lesson-strip small{display:block;font-size:11px;color:#627587;margin-top:4px}.teacher-panel{background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden}.panel-heading{display:flex;align-items:center;gap:9px;padding:18px 20px;border-bottom:1px solid var(--border)}.panel-heading h2{font-size:16px;font-weight:700}.source-card{display:flex;align-items:center;gap:10px;margin:20px;padding:13px 10px;background:#f4f7fb;border:1px solid var(--border);border-radius:8px}.source-card strong{font-size:13px;display:block}.source-card span{font-size:11px;display:block;color:#64798c}.source-card>svg:last-child{margin-left:auto;color:#28715e}.panel-section{padding:0 20px 22px;margin-bottom:20px;border-bottom:1px solid #e9eef4}.panel-section h3{font-size:14px;font-weight:700;margin-bottom:10px}.panel-section p{font-size:14px;color:#52697f;line-height:1.9;word-break:keep-all}.teacher-script{background:#f8fafc;border-left:2px solid #a5bfd8;padding:12px}.source-line{font-size:12px;color:#617d94;padding-top:8px}.pace-notice{font-size:12px;color:#265d90;background:#edf5fc;padding:10px;border-radius:6px;margin-top:12px}.teacher-tip{padding:0 20px 22px;color:#52718a}.teacher-tip strong{font-size:13px}.teacher-tip p{font-size:12px;line-height:1.7;margin-top:5px}.app-footer{display:flex;justify-content:space-between;max-width:1760px;margin:auto;padding:0 40px 24px;font-size:12px;color:#677e90}.app-footer a{text-underline-offset:3px}.teaching-board:fullscreen{display:flex;flex-direction:column;justify-content:center;max-width:none;padding:3vh 5vw;border-radius:0}.teaching-board:fullscreen h2{font-size:clamp(32px,3vw,58px)}.teaching-board:fullscreen .board-body{flex:1}.teaching-board:fullscreen .earth-stage{max-width:600px}.teaching-board:fullscreen .concept-note{font-size:28px}
+@media(min-width:1600px){.teaching-board{min-height:660px}.board-body{min-height:415px}.earth-stage{max-width:445px}}@media(max-width:1150px){.workspace{padding:22px}.app-header{padding:0 22px}.teaching-layout{grid-template-columns:minmax(0,1fr) 265px;gap:16px}.teaching-board{padding:22px 22px 16px}.board-body{grid-template-columns:43% 57%}.derivation{padding-left:16px}.board-toolbar>span:nth-child(2){display:none}.board-toolbar button{margin-left:auto}.lesson-strip b{font-size:11px}.lesson-strip small{display:none}}@media(max-width:900px){.teaching-layout{grid-template-columns:1fr}.teacher-panel{display:grid;grid-template-columns:1fr 1fr}.panel-heading{grid-column:1/-1}.teacher-tip{display:none}.teaching-board{min-height:530px}.teaching-board h2{font-size:30px}.header-context{display:none}.source-card{align-self:start}}@media(max-width:580px){.app-header{height:64px;padding:0 16px}.brand{font-size:18px}.mode-tag{font-size:11px;padding:4px 8px}.workspace{padding:18px 12px}.workspace-title h1{font-size:23px}.board-toolbar{padding:0 12px}.teaching-board{padding:20px 18px}.teaching-board h2{font-size:25px}.board-body{display:flex;flex-direction:column;align-items:stretch}.earth-stage{max-width:275px}.earth-figure figcaption{margin-top:-5px}.derivation{padding:28px 0 8px}.concept-note{font-size:16px}.lesson-strip{grid-template-columns:repeat(3,1fr)}.lesson-strip b{font-size:13px}.lesson-strip small{display:block}.teacher-panel{display:block}.app-footer{padding:0 15px 20px;gap:12px;flex-wrap:wrap}.step-navigation small{display:none}.teaching-board:fullscreen{overflow:auto}.board-assumptions{word-break:keep-all}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}@media print{.app-header,.workspace-title,.teacher-panel,.board-toolbar,.step-navigation,.lesson-strip,.app-footer{display:none}.workspace{padding:0}.teaching-layout{display:block}.teaching-board{print-color-adjust:exact;-webkit-print-color-adjust:exact}}
+
+/* Teaching surface: equations stay complete and remain in the lesson history. */
+.presentation-surface{min-width:0;background:var(--background)}
+.board-scroll{min-width:0}
+.teaching-board{overflow:visible}
+.board-body{grid-template-columns:minmax(200px,38%) minmax(0,1fr);align-items:start}
+.earth-column{position:sticky;top:18px;align-self:start;margin-top:18px}
+.earth-stage{aspect-ratio:1;width:100%;max-width:420px}
+.earth-stage>img{width:100%;height:auto;aspect-ratio:1;left:0;top:4%;object-fit:contain;border-radius:0;mix-blend-mode:normal;mask-image:radial-gradient(circle closest-side at 50% 50%,#000 76%,transparent 79%)}
+.earth-figure figcaption{margin-top:0;font-size:16px}
+.earth-figure figcaption span{font-size:12px;line-height:1.7}
+.earth-column .symbol-legend{display:grid;gap:7px;max-width:240px;margin:22px auto 0;font-size:14px}
+.symbol-legend b{display:inline-block;min-width:28px;font-size:20px}
+.derivation{padding:24px 0 8px 30px}
+.concept-note{font-size:18px;line-height:1.85}
+.equation-history{list-style:none;margin:25px 0 0;padding:0}
+.equation-row{border-top:1px solid #294154;padding:15px 4px;color:#c1d3e2}
+.equation-row>p:first-child{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:14px;color:#b5cbe0}
+.equation-row>p:first-child>span{font-size:12px;border:1px solid #705c34;border-radius:4px;padding:1px 7px;color:var(--gold)}
+.active-equation{color:var(--gold);border-top-color:#937c4f}
+.equation-row.active-equation>p:first-child{color:var(--gold)}
+.math-formula{font-size:24px;overflow-x:auto;overflow-y:hidden;padding:3px 0 8px;max-width:100%}
+.math-formula .katex-display{margin:.55em 0;text-align:left}
+.math-formula .katex-display>.katex{text-align:left;white-space:nowrap}
+.equation-explanation{font-size:14px;color:#bed2e4;line-height:1.8;word-break:keep-all}
+.board-source{font-size:13px;color:#9eb7ce;margin-top:24px}
+.board-assumptions{font-size:13px}
+.step-navigation{padding:18px 0}
+.playback-control{display:flex;align-items:center;gap:12px}
+.playback-control>span{font-size:13px;color:#52718a}
+.lesson-strip b{font-size:14px;white-space:normal;word-break:keep-all}
+.lesson-strip small{font-size:12px}
+.source-card{width:calc(100% - 40px);text-align:left;min-height:70px}
+.source-card strong{font-size:14px}
+.source-card small{font-size:12px;color:#5d7284;display:block}
+.edit-actions{display:flex;gap:5px;margin-top:14px;flex-wrap:wrap}
+.edit-actions button{padding-left:10px;padding-right:10px}
+.panel-section h3{display:flex;justify-content:space-between}
+.panel-section [data-slot=slider]{min-height:44px}
+.panel-section .pace-notice{font-size:14px;line-height:1.75}
+.panel-section .secondary-note,.secondary-note{font-size:13px;line-height:1.75;color:#52697f}
+.teacher-tip strong{font-size:14px}.teacher-tip p{font-size:14px}
+.lesson-dialog{max-height:85dvh;overflow-y:auto;background:white}
+.lesson-dialog textarea{border:1px solid var(--input);border-radius:7px;padding:12px;width:100%;resize:vertical;min-height:140px;color:var(--foreground);background:white}
+.lesson-dialog textarea:focus{outline:2px solid var(--ring);outline-offset:2px}
+.lesson-dialog label{font-size:14px;font-weight:600}
+.source-pages section{padding:15px 0;border-bottom:1px solid var(--border)}
+.source-pages h3{font-size:15px;font-weight:700;margin-bottom:9px}
+.source-pages p{font-size:15px;line-height:1.9;word-break:keep-all}
+.source-pages a{display:block;margin-top:18px;color:var(--primary);text-decoration:underline;font-size:14px}
+.export-outline{list-style:none;margin:0;padding:0}
+.export-outline li{display:flex;align-items:center;gap:12px;padding:9px 0;font-size:15px}
+.export-outline svg{color:#28715e}
+.export-outline small{margin-left:auto;color:#5d7284}
+.feedback{margin-top:16px;padding:12px 16px;border-left:3px solid var(--primary);background:#eaf3fb;font-size:14px}
+.screen-reader-status{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.presentation-surface:fullscreen{display:flex;flex-direction:column;height:100dvh;width:100vw;padding:0 24px;background:var(--board)}
+.presentation-surface:fullscreen .board-toolbar{flex-shrink:0;background:var(--board);color:#bed2e4;border-color:#294154}
+.presentation-surface:fullscreen .board-toolbar>span:first-child{color:#e9f4ff}
+.presentation-surface:fullscreen .board-scroll{flex:1;overflow-y:auto;min-height:0;scrollbar-color:#64798c #091b2b}
+.presentation-surface:fullscreen .teaching-board{min-height:100%;border-radius:0;padding:28px 5vw}
+.presentation-surface:fullscreen .step-navigation{flex-shrink:0;background:var(--background);padding:12px 24px;margin:0 -24px}
+.presentation-surface:fullscreen .board-body{grid-template-columns:35% minmax(0,1fr)}
+.presentation-surface:fullscreen .math-formula{font-size:32px}
+.pdf-render-root{position:fixed;left:-20000px;top:0;width:1280px;pointer-events:none}
+.pdf-page{width:1280px;height:900px;background:var(--board)}
+.pdf-page .teaching-board{width:1280px;height:900px;padding:40px 50px;border-radius:0}
+.pdf-page .board-body{display:grid;grid-template-columns:42% 58%;min-height:510px;align-items:center}
+.pdf-page .earth-column{position:static;margin-top:0}
+.pdf-page .earth-stage{max-width:330px}
+.pdf-page .teaching-board h2{font-size:40px}
+.pdf-page .concept-note{font-size:21px;line-height:1.85}
+.pdf-page .math-formula{font-size:36px}
+.pdf-page .board-assumptions{font-size:16px}
+.pdf-page .earth-figure figcaption span{font-size:14px}
+.pdf-page .derivation{padding-left:35px}
+.classroom-tabs{margin-bottom:16px;min-height:48px;padding:4px;gap:4px;background:#e3ebf3}
+.classroom-tabs [data-slot=tabs-trigger]{min-height:40px;padding:8px 18px;font-size:14px}
+.classroom-tab-content[data-state=inactive]{display:none}
+.live-layout{grid-template-columns:minmax(0,1fr) 355px}
+.live-panel textarea,.live-panel input,.source-dialog input{width:100%;font:inherit;background:white;border:1px solid var(--input);border-radius:6px;padding:10px;color:var(--foreground)}
+.live-panel textarea{resize:vertical;min-height:110px;font-size:14px;line-height:1.8}
+.live-panel label{display:block;font-size:14px;font-weight:600;margin:12px 0 8px}
+.live-panel label input{margin-top:6px;font-weight:400}
+.live-panel input:focus,.live-panel textarea:focus,.source-dialog input:focus{outline:2px solid var(--ring);outline-offset:2px}
+.live-panel .panel-section{margin-bottom:0;padding-bottom:20px}
+.live-panel .source-card{margin-top:12px}
+.live-panel .source-card strong{overflow-wrap:anywhere}
+.connection-notice{padding:16px 20px 0;font-size:14px;line-height:1.75;color:#52697f}
+.connection-notice>div{display:flex;align-items:center;justify-content:space-between}
+.connection-notice a{color:var(--primary);text-decoration:underline}
+.recording-actions{display:flex;gap:8px;flex-wrap:wrap}
+.recording-actions button{font-size:13px;padding:8px 10px}
+.suggest-button{width:100%;margin:12px 0}
+.live-message{padding:16px 20px;font-size:14px;color:#225c9d;background:#edf5fc;line-height:1.8;word-break:keep-all}
+.pending-frame{padding:20px;background:#f7faff}
+.pending-frame h3{font-size:14px;font-weight:700;margin-bottom:12px;color:#225c9d}
+.pending-frame strong{display:block;font-size:17px;margin-bottom:12px}
+.pending-frame .math-formula{font-size:23px}
+.pending-frame summary{font-size:14px;cursor:pointer;margin:14px 0}
+.pending-frame blockquote{font-size:14px;line-height:1.8;border-left:2px solid #9dbbd6;padding-left:12px}
+.live-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:50px 35px;min-height:580px}
+.live-empty>svg{color:#91b9dc;margin-bottom:20px}
+.live-empty h2{font-size:28px;margin:0 0 20px}
+.live-empty p{color:#c0d4e4;line-height:1.9}
+.live-board .board-body{align-items:center}
+.live-board h2{word-break:keep-all}
+.live-board .equation-row{margin-top:24px}
+.text-board-body .derivation{padding:24px 0;max-width:850px}
+.board-citation{margin-top:28px;font-size:13px;color:#b0c9de;line-height:1.8}
+.board-citation blockquote{border-left:2px solid #55728e;margin-top:10px;padding-left:14px;white-space:pre-wrap;overflow-wrap:anywhere}
+.live-history{display:flex;gap:8px;flex-wrap:wrap}
+.live-history button{max-width:100%;height:auto;white-space:normal;text-align:left;justify-content:flex-start}
+.source-dialog{width:min(760px,calc(100vw - 32px));max-width:760px}
+.source-dialog input{margin-top:7px}
+.source-dialog .upload-button{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:14px;border:1px dashed #9db5cb;border-radius:7px}
+.upload-button input{padding:0;border:0;font-size:14px}
+.source-edit-pages{max-height:42dvh;overflow-y:auto;padding:3px}
+.source-edit-pages label{display:block;margin-bottom:16px}
+.source-edit-pages textarea{margin-top:8px}
+.live-pdf-page .board-citation blockquote{font-size:15px;line-height:1.7}
+.live-pdf-page .board-citation{font-size:15px}
+.presentation-surface > .board-toolbar > button:last-child{margin-left:auto}
+@media(max-width:1100px){.live-layout{grid-template-columns:minmax(0,1fr) 320px}.live-board .board-body{display:block}.live-board .earth-column{position:static}.live-board .earth-stage{max-width:270px}.live-board .derivation{padding-left:0}}
+@media(max-width:900px){.live-layout{grid-template-columns:1fr}.live-panel .panel-section{max-width:none}.live-board .board-body{display:grid}.live-empty{min-height:400px}}
+@media(max-width:580px){.classroom-tabs{width:100%}.classroom-tabs [data-slot=tabs-trigger]{padding:8px;font-size:13px}.live-board .board-body{display:block}.live-empty h2{font-size:24px}.live-pdf-page .board-body{display:grid}.live-pdf-page .earth-stage{max-width:330px}}
+@media(max-width:1250px){.playback-control{flex-direction:column;gap:4px}.board-body{grid-template-columns:minmax(175px,35%) minmax(0,1fr)}.derivation{padding-left:24px}.concept-note{font-size:17px}.math-formula{font-size:24px}.lesson-strip b{font-size:13px}}
+@media(max-width:900px){.board-body{grid-template-columns:38% minmax(0,1fr)}.teacher-panel{display:block}.teacher-tip{display:block}.playback-control{flex-direction:row}.panel-section p{font-size:16px}}
+@media(max-width:580px){.board-body{display:flex;flex-direction:column}.earth-column{position:static;width:100%;margin:0}.earth-stage{max-width:260px}.earth-column .symbol-legend{display:flex;flex-wrap:wrap;max-width:none;gap:4px 14px;padding-top:12px;margin-top:14px;font-size:13px}.earth-column .symbol-legend b{min-width:0;font-size:17px}.derivation{padding:25px 0 8px}.math-formula{font-size:24px}.playback-control{flex-direction:column;gap:4px}.playback-control>span{font-size:12px;max-width:130px;text-align:center}.step-navigation{align-items:flex-start;gap:6px}.step-navigation button{font-size:13px;padding:8px 10px}.step-navigation button svg{width:15px}.lesson-strip b{font-size:14px}.mode-tag{font-size:12px}.presentation-surface:fullscreen{padding:0 12px}.presentation-surface:fullscreen .board-body{display:flex}.presentation-surface:fullscreen .math-formula{font-size:26px}.presentation-surface:fullscreen .step-navigation{margin:0 -12px;padding:12px}.board-assumptions{font-size:12px}.pdf-page .earth-stage{max-width:330px}.pdf-page .symbol-legend{display:grid;max-width:240px;margin:22px auto 0;font-size:14px}.pdf-page .derivation{padding:24px 0 8px 35px}}

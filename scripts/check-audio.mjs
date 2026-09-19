@@ -1,0 +1,11 @@
+import {readFile} from 'node:fs/promises';
+const base='http://localhost:5173';
+const signIn=await fetch(`${base}/signin-with-chatgpt?return_to=/`,{redirect:'manual'});
+const cookie=signIn.headers.getSetCookie().map(value=>value.split(';')[0]).join('; ');
+const form=new FormData();
+form.append('audio',new Blob([await readFile('tmp/pdfs/lesson-audio.wav')],{type:'audio/wav'}),'lesson.wav');
+const started=Date.now();
+const response=await fetch(`${base}/api/transcribe`,{method:'POST',headers:{cookie,Origin:base},body:form});
+const result=await response.json();
+console.log(JSON.stringify({status:response.status,elapsedMs:Date.now()-started,...result}));
+if(!response.ok || !result.text?.includes('지구')) process.exitCode=1;
