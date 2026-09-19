@@ -1,0 +1,31 @@
+/* Two rolling lines, with a backdrop only behind the words. The fixed slot
+   keeps the board still as captions arrive, wrap, or fade away. */
+.ab-stage .ab-cinema-captions{
+  display:flex;align-items:center;justify-content:center;gap:0;
+  height:100px;min-height:100px;max-height:100px;padding:8px 28px 16px;
+  background:transparent;border:0;overflow:hidden;flex-shrink:0;
+  pointer-events:none;
+}
+.ab-caption-window{
+  width:min(100%,940px);height:3em;
+  font-size:clamp(21px,2vw,29px);line-height:1.5;
+  overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;
+  opacity:0;transition:opacity 180ms ease-out;
+}
+.ab-caption-window[data-visible=true]{opacity:1}
+.ab-cinema-captions .ab-caption-window p{
+  flex-shrink:0;margin:0;width:100%;max-width:none;
+  font-family:Arial,'Malgun Gothic','Apple SD Gothic Neo',sans-serif;
+  font-size:inherit;line-height:1.5;font-weight:600;letter-spacing:0;
+  text-align:center;color:#fff;white-space:normal;overflow-wrap:anywhere;
+  word-break:keep-all;text-shadow:0 1px 3px #000,0 0 2px #000;
+}
+.ab-caption-window p span{
+  background:rgb(18 24 22 / 82%);padding:.1em .32em;
+  border-radius:3px;box-decoration-break:clone;-webkit-box-decoration-break:clone;
+}
+@media(max-width:760px){
+  .ab-stage .ab-cinema-captions{height:82px;min-height:82px;max-height:82px;padding:4px 12px 12px}
+  .ab-caption-window{font-size:20px}
+}
+@media(prefers-reduced-motion:reduce){.ab-caption-window{transition:none}}

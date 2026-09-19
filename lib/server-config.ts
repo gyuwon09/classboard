@@ -3,7 +3,7 @@ import { getChatGPTUser } from '@/app/chatgpt-auth';
 
 export function apiConfig() {
   const values = env as unknown as Record<string, string | undefined>;
-  return { apiKey: values.OPENAI_API_KEY || process.env.OPENAI_API_KEY || '', model: values.OPENAI_MODEL || process.env.OPENAI_MODEL || 'gpt-4.1-mini', transcriptionModel: values.OPENAI_TRANSCRIBE_MODEL || process.env.OPENAI_TRANSCRIBE_MODEL || 'gpt-4o-mini-transcribe' };
+  return { verificationModel: values.OPENAI_VERIFICATION_MODEL || process.env.OPENAI_VERIFICATION_MODEL || 'gpt-4.1', ocrModel: values.OPENAI_OCR_MODEL || process.env.OPENAI_OCR_MODEL || 'gpt-4.1', apiKey: values.OPENAI_API_KEY || process.env.OPENAI_API_KEY || '', model: values.OPENAI_MODEL || process.env.OPENAI_MODEL || 'gpt-4.1-mini', transcriptionModel: values.OPENAI_TRANSCRIBE_MODEL || process.env.OPENAI_TRANSCRIBE_MODEL || 'gpt-4o-mini-transcribe' };
 }
 export async function rejectUnauthorised(request: Request): Promise<Response | null> {
   const origin = request.headers.get('origin');
